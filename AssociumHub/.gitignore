@@ -1,15 +1,64 @@
+# =========================================
+# Android Studio / IntelliJ
+# =========================================
+
+# Build-related files
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
 *.iml
-.gradle
+*.o
+*.so
+
+# Build folder
+/build
+
+# Local configuration files
 /local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
 /.idea/workspace.xml
+/.idea/libraries/
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
+
+# Gradle files
+.gradle
+/gradlew
+/gradlew.bat
+/gradle/wrapper/gradle-wrapper.properties
+
+# Secrets (API keys, etc.) - You should never commit these.
+# If you have a secrets.properties or similar, add it here.
+# secrets.properties
+
+# Log files
+*.log
+
+# Keystore files (for signing your app) - EXTREMELY IMPORTANT
+# These are private keys and must NOT be committed to a public repository.
+*.jks
+*.keystore
+
+# Android Studio caches and temporary files
 .DS_Store
-/build
-/captures
+/captures/
 .externalNativeBuild
 .cxx
-local.properties
+
+# Google Services file (if you want to keep it private, though it's often committed)
+# If your google-services.json contains sensitive info, uncomment the line below.
+# google-services.json
+
+# Profiler and test reports
+/debug/
+/profile/
+*.exec
+*.ec
+
+# Generated files
+**/build/
+
