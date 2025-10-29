@@ -28,7 +28,7 @@ Projeyi yerel makinenizde kurup çalıştırmak için aşağıdaki adımları ta
 ### Adımlar
 1. Projeyi Klonlayın: Projeyi GitHub'dan kendi bilgisayarınıza klonlayın.
 ```
-    git clone https://github.com/KULLANICI_ADINIZ/associumhub.git
+    git clone https://github.com/unluckyprayersorg/agile-based-software-development.git
 ```
 2. Projeyi Android Studio'da Açın:
    - Android Studio'yu başlatın.
