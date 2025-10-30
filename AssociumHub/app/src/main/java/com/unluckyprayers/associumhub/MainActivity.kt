@@ -11,13 +11,12 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.unluckyprayers.associumhub.ui.components.BottomNavigationBar
 import com.unluckyprayers.associumhub.ui.navigation.AppNavGraph
-import com.unluckyprayers.associumhub.ui.theme.AssociumHubTheme
+import com.unluckyprayers.associumhub.ui.theme.AssociumTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,7 +25,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            AssociumHubTheme {
+            AssociumTheme(darkTheme = true) {
                 val navController = rememberNavController()
                 MainScreen(navController = navController)
             }
@@ -55,12 +54,4 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         text = "Hello $name!",
         modifier = modifier
     )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AssociumHubTheme {
-        Greeting("Android")
-    }
 }

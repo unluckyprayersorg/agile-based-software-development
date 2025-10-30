@@ -1,58 +1,86 @@
 package com.unluckyprayers.associumhub.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.Color
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+private val DarkColors: ColorScheme = darkColorScheme(
+    primary = AssociumPrimary,
+    onPrimary = AssociumOnPrimary,
+    primaryContainer = AssociumPrimaryContainer,
+    onPrimaryContainer = AssociumOnPrimaryContainer,
+
+    secondary = AssociumSecondary,
+    onSecondary = AssociumOnSecondary,
+    secondaryContainer = AssociumSecondaryContainer,
+    onSecondaryContainer = AssociumOnSecondaryContainer,
+
+    tertiary = AssociumTertiary,
+    onTertiary = AssociumOnTertiary,
+    tertiaryContainer = AssociumTertiaryContainer,
+    onTertiaryContainer = AssociumOnTertiaryContainer,
+
+    background = AssociumBackground,
+    onBackground = AssociumOnBackground,
+    surface = AssociumSurface,
+    onSurface = AssociumOnSurface,
+    surfaceVariant = AssociumSurfaceVariant,
+    onSurfaceVariant = AssociumOnSurfaceVariant,
+    outline = AssociumOutline,
+
+    error = AssociumError,
+    onError = AssociumOnError,
+    errorContainer = AssociumErrorContainer,
+    onErrorContainer = AssociumOnErrorContainer
 )
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+private val LightColors: ColorScheme = lightColorScheme(
+    primary = AssociumPrimary,
+    onPrimary = AssociumOnPrimary,
+    primaryContainer = AssociumOnPrimaryContainer,
+    onPrimaryContainer = AssociumPrimaryContainer,
 
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    secondary = AssociumSecondary,
+    onSecondary = AssociumOnSecondary,
+    secondaryContainer = AssociumOnSecondaryContainer,
+    onSecondaryContainer = AssociumSecondaryContainer,
+
+    tertiary = AssociumTertiary,
+    onTertiary = AssociumOnTertiary,
+    tertiaryContainer = AssociumOnTertiaryContainer,
+    onTertiaryContainer = AssociumTertiaryContainer,
+
+    background = Color(0xFFFFFFFF),
+    onBackground = Color(0xFF0B1220),
+    surface = Color(0xFFF8FAFF),
+    onSurface = Color(0xFF0B1220),
+    surfaceVariant = Color(0xFFE6ECF5),
+    onSurfaceVariant = Color(0xFF405169),
+    outline = Color(0xFF7B8797),
+
+    error = AssociumError,
+    onError = AssociumOnError,
+    errorContainer = Color(0xFFFFE4E6),
+    onErrorContainer = Color(0xFF3F0C0C)
 )
 
 @Composable
-fun AssociumHubTheme(
+fun AssociumTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
-    }
+    val colors = if (darkTheme) DarkColors else LightColors
 
     MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
+        colorScheme = colors,
+        typography = MaterialTheme.typography, // şimdilik default
+        shapes = MaterialTheme.shapes,
         content = content
     )
 }
