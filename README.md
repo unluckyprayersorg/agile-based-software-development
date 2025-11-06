@@ -126,6 +126,7 @@ Katkılarınız projeyi daha iyi hale getirecektir! Pull request göndermekten v
   5. [ ] Toplulukları follow yapıp duyurularına abone olma ve sürekli bildirim güncellemesi
   6. [ ] Bildirim özelliği
   7. [ ] QR kod okutup etkinliğe katılma
+  8. [ ] Profil sekmesinden kullanıcı bilgine bakma ( kayıt olduğum kulüpler, katıldığım geçmiş etkinlikler vs.)
 
 ### Circle Hub (Communities):
   1. [ ] Giriş Ekranı
